@@ -2,7 +2,7 @@ streamlit
 PyPDF2
 tiktoken
 deepl
-yt_dlp
-youtube_transcript_api
+yt-dlp
+youtube-transcript-api
 openai
 pathlib
