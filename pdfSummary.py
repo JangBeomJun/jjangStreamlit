@@ -4,7 +4,7 @@ from openai import OpenAI
 import textwrap
 import deepl
 import streamlit as st 
-
+import os
 client = OpenAI(
     api_key = st.secrets["open_spi_key"]
 )
