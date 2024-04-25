@@ -63,7 +63,7 @@ def translate_en_to_korean_using_openai(text):
 
 def translate_english_to_korean_using_deepl(text):
     auth_key = st.secrets["deepl_key"]
-    tranlator = deepl.Translator(auth_key)
+    translator = deepl.Translator(auth_key)
     
     result = translator.translate_text(text,target_lang="KO")
     
