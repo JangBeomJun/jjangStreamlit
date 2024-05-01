@@ -72,7 +72,8 @@ def summarize_youtube_video(video_url,selected_lang, trans_method):
 
 def button_callback():
     st.session_state['input'] = ""
-    
+
+st.title("유튜브 영상 요약")
 st.sidebar.title("요약 설정")
 url_text = st.text_input("유투브 동영상 URL 입력", key="input")
 
@@ -87,7 +88,6 @@ else:
     
 clicked_for_sum = st.button('동영상 내용 요약')
 
-st.title("유튜브 영상 요약")
 if url_text and clicked_for_sum:
     yt_video_url = url_text.strip()
     summarize_youtube_video(yt_video_url, yt_lang, trans_method)
