@@ -74,7 +74,7 @@ def button_callback():
     st.session_state['images'] = images
 
 
-st.title("이미지 생성을 위한 설정 ")
+st.title("인공지능 이미지 생성기")
 input_text = st.text_input ("이미지 생성을 위한 설명을 입력하세요.","빌딩이 보이는 호수가 있는 도시의 공원")
 radio_selected_lang = st.radio("입력한 언어", ['한국어', '영어'],index=0, horizontal=True)
 
@@ -87,6 +87,5 @@ image_size =st.radio('생성할 이미지 크기를 선택하세요.',image_size
 detail_description = st.radio('상세 묘사를 추가하겠습니까?',['Yes', 'No'], index=1, horizontal=True)
 clicked = st.button('이미지 생성', on_click=button_callback)
 
-st.title("인공지능 이미지 생성기")
 if clicked or st.session_state['download_buttons'] == True:
     display_results()
