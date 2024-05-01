@@ -29,8 +29,8 @@ def display_results():
     shorten_text_for_image = st.session_state['shorten_text_for_image']
     image_caption = st.session_state['image_caption']
     image_urls = st.session_state['image_urls']
-    st.sidebar.write("[이미지 생성을 위한 텍스트]")
-    st.sidebar.write(shorten_text_for_image)
+    st.write("[이미지 생성을 위한 텍스트]")
+    st.write(shorten_text_for_image)
     for k, image_url in enumerate(image_urls):
         st.image(image_url, caption=image_caption)
         image_data = st.session_state['images'][k]
