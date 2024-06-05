@@ -60,11 +60,3 @@ def translate_en_to_korean_using_openai(text):
     assistant_reply = response.choices[0].message.content
 
     return assistant_reply
-
-def translate_english_to_korean_using_deepl(text):
-    auth_key = st.secrets["deepl_key"]
-    translator = deepl.Translator(auth_key)
-    
-    result = translator.translate_text(text,target_lang="KO")
-    
-    return result.text
