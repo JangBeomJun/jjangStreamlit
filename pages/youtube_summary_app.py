@@ -6,7 +6,6 @@ from openai import OpenAI
 import os
 import tiktoken
 import textwrap
-import deepl
 
 def calc_token_num(text, model="gpt-4-turbo-2024-04-09"):
     enc = tiktoken.encoding_for_model(model)
@@ -65,8 +64,6 @@ def summarize_youtube_video(video_url,selected_lang, trans_method):
         trans_result = ""
         if trans_method == 'OpenAI':
             trans_result = pdfSummary.translate_en_to_korean_using_openai(final_summary)
-        elif trans_method == 'Deepl':
-            trans_result = pdfSummary.translate_english_to_korean_using_deepl(final_summary)
         shorten_trans_result = textwrap.shorten(trans_result,120,placeholder='[..이하 생략..]')
         st.write("-한국어 요약(축약):",shorten_trans_result)
 
@@ -81,7 +78,7 @@ clicked_for_clear = st.button('URL 입력 내용 지우기', on_click=button_cal
 yt_lang = st.radio('유튜브 동영상 언어 선택', ['한국어','영어'], index=1, horizontal=True)
 
 if yt_lang=='영어':
-    trans_method = st.radio('번역 방법 선택', ['OpenAI', 'Deepl'], index=1,  horizontal=True)
+    trans_method = st.radio('번역 방법 선택', ['OpenAI'], index=1,  horizontal=True)
 else:
     trans_method=""
     
