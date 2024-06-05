@@ -78,7 +78,7 @@ clicked_for_clear = st.button('URL 입력 내용 지우기', on_click=button_cal
 yt_lang = st.radio('유튜브 동영상 언어 선택', ['한국어','영어'], index=1, horizontal=True)
 
 if yt_lang=='영어':
-    trans_method = st.radio('번역 방법 선택', ['OpenAI'], index=1,  horizontal=True)
+    trans_method = 'OpenAI'
 else:
     trans_method=""
     
